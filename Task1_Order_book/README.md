@@ -71,3 +71,56 @@ The last table (bottom) shows the history of orders and their status.
 ## How to install
 
 **Tested only on Linux!**
+
+
+### Ubuntu:
+
+First, you need to update all repositories and packages
+
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+Next, you need to install all the dependencies required for a successful build
+
+```
+sudo apt-get install git cmake build-essential qt6-base-dev qt6-multimedia-dev
+```
+
+After successful installation, you need to clone this repository
+
+```
+git clone https://github.com/MakosHD/Distributed_Lab_Tasks.git
+```
+
+Go to the repository and create a folder for the build
+
+```
+cd Distributed_Lab_Tasks/Task1_Order_book/
+mkdir build
+cd build
+```
+
+And the final step is to compile the program
+
+```
+cmake ..
+cmake --build .
+```
+
+If no errors appeared, then congratulations! You've successfully compiled the program and now have an executable file. To run it, enter
+
+```
+./task1
+```
+
+## Debugging
+The algorithm for processing orders runs very quickly, and to make the program more illustrative, you can introduce a delay between each order processing. To do this, you need to uncomment the following line in the [CMakeLists.txt](/Task1_Order_book/CMakeLists.txt) file
+
+```
+#add_compile_definitions(ORDERBOOK_THREAD_WAIT=5)
+```
+
+After that, if you recompile the program, orders will be processed with the delay specified in ORDERBOOK_THREAD_WAIT (seconds)
+

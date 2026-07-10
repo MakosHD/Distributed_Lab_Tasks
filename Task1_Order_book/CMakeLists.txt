@@ -24,7 +24,8 @@ add_executable(task1
     src/consolereader.h
     )
 
-add_compile_definitions(ORDERBOOK_THREAD_WAIT=5)
+
+#add_compile_definitions(ORDERBOOK_THREAD_WAIT=5)
 
 
 target_link_libraries(task1 PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Multimedia)

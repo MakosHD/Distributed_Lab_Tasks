@@ -8,6 +8,9 @@
 #include "consolereader.h"
 
 int main(int argc, char** argv) {   
+    #ifdef ORDERBOOK_THREAD_WAIT
+    std::cout << "WARNING: Hey! You build this program with ORDERBOOK_THREAD_WAIT macro. It means that each orders will be processed with " << ORDERBOOK_THREAD_WAIT << " seconds delay" << std::endl;
+    #endif
     QLoggingCategory::setFilterRules(
         "qt.multimedia.ffmpeg=false"
     );
