@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1043</width>
+    <height>533</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">Orderbook of a little cove on Berk</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="_LABEL_Your_balance">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>18</pointsize>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string notr="true">Your balance: </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_balance_UAH">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+          <italic>true</italic>
+         </font>
+        </property>
+        <property name="text">
+         <string notr="true">100 UAH</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_balance_USD">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+          <italic>true</italic>
+         </font>
+        </property>
+        <property name="text">
+         <string notr="true">100 USD</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_change_balance">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="placeholderText">
+         <string notr="true">+/- ballance</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox_change_balance">
+        <property name="currentText">
+         <string notr="true">UAH</string>
+        </property>
+        <item>
+         <property name="text">
+          <string notr="true">UAH</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string notr="true">USD</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_change_balance">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string notr="true">Change it</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="Line" name="line_2">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_transaction">
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="_LABEL_I_want_to">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+          <italic>true</italic>
+         </font>
+        </property>
+        <property name="text">
+         <string notr="true">I want to</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox_transcation">
+        <item>
+         <property name="text">
+          <string notr="true">BUY</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string notr="true">SELL</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_transaction_uah">
+        <property name="font">
+         <font>
+          <pointsize>13</pointsize>
+          <italic>true</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="placeholderText">
+         <string notr="true" extracomment="957">957 trillion</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="_LABEL_UAH">
+        <property name="font">
+         <font>
+          <pointsize>20</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string notr="true">UAH</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="_LABEL_at">
+        <property name="text">
+         <string notr="true">at</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_transaction_usd">
+        <property name="font">
+         <font>
+          <pointsize>13</pointsize>
+          <italic>true</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="placeholderText">
+         <string notr="true">0.024</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="_LABEL_USD">
+        <property name="font">
+         <font>
+          <pointsize>20</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string notr="true">USD</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="_LABEL_per_UAH">
+        <property name="text">
+         <string notr="true">per UAH</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_transaction">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="font">
+         <font>
+          <underline>false</underline>
+         </font>
+        </property>
+        <property name="text">
+         <string notr="true">DO IT!</string>
+        </property>
+        <property name="icon">
+         <iconset theme="QIcon::ThemeIcon::GoDown"/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_order_is_on_market">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>20</pointsize>
+          <italic>true</italic>
+         </font>
+        </property>
+        <property name="text">
+         <string notr="true">Your order is on the market!</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_cancel_order">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string notr="true">Cancel it</string>
+        </property>
+        <property name="icon">
+         <iconset theme="QIcon::ThemeIcon::ListRemove"/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_buy_sell_average">
+      <property name="text">
+       <string>Buy price / Sell price</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_">
+      <item>
+       <widget class="QTableView" name="tableView_buy">
+        <attribute name="verticalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+         <bool>true</bool>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTableView" name="tableView_sell">
+        <attribute name="verticalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTableView" name="tableView_completed"/>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_your_order_completed">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string notr="true">Congratulations! Your last order was finished!</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

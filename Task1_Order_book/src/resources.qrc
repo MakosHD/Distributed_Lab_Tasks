@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../sounds/Talking Tom Nuh uh.wav</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,6 @@
+[submodule "Task#4_Hitler_crawler/libs/cpr"]
+	path = "Task#4_Hitler_crawler/libs/cpr"
+	url = https://github.com/libcpr/cpr.git
+[submodule "Task#3_Website_crawler/libs/csv-parser"]
+	path = "Task#3_Website_crawler/libs/csv-parser"
+	url = https://github.com/vincentlaucsb/csv-parser.git
