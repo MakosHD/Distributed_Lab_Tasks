@@ -124,3 +124,20 @@ The algorithm for processing orders runs very quickly, and to make the program m
 
 After that, if you recompile the program, orders will be processed with the delay specified in ORDERBOOK_THREAD_WAIT (seconds)
 
+## Why my solution is efficient?
+It’s hard to answer this question because my project uses a large third-party framework (Qt) that doesn’t allow me to specify exactly how efficient my solution is. But if we remove the GUI factor and focus only on the Orderbook and Users (which is entirely possible, since the Orderbook and Users are independent of the GUI), I can point out a couple of reasons why my solution is efficient
+
+- Users and OrderBook use a deque instead of a vector or other array storage types  
+A deque is much better suited for storing this type of data. A vector isn’t suitable here because every time we add a user or an order, all of the vector’s elements in memory are repositioned. These are unnecessary operations that provide no benefit. Also, because memory locations do not change in the `OrderBook` class, there are auxiliary vectors `buy_orders`, `sell_orders`, and `completed_orders`. They store pointers, and it is much more efficient to work with pointers than with the entire `s_order` object.
+
+- Buy/sell orders are sorted using only pointers  
+As mentioned earlier, all orders are stored in a deque, but all operations take place in separate vectors that store pointers. Operations such as sorting take less time and fewer resources because they move pointers rather than entire objects.
+
+- All classes are multithread-friendly  
+Each class and function was designed to be multithreaded, meaning that multiple threads can access the classes simultaneously, and all requests will be processed correctly. This also allows for adding additional threads during high load, but for this project, that would be excessive and unnecessary (after all, this is a test task, not a production-ready solution).
+
+- A separate thread for processing orders  
+Instead of placing all responsibilities on the thread that interacts with the OrderBook class, there is a separate thread whose sole purpose is to sort orders and process them. This resolves the following situation: imagine we’re accessing the OrderBook to place an order, but the OrderBook doesn’t have its own thread. In that case, sorting and processing all orders would occur within the same call as `placed_order`, meaning the user would have to wait until all processing was complete before control returned to the user. In such situations, the interface usually stops responding (because the thread is busy processing orders rather than handling GUI events). This is frustrating for the user and is generally not the correct approach from the GUI’s perspective.
+
+- Use of "no double" when working with money  
+We can never trust `double` for calculations, because 0.1 + 0.2 = 0.30000000000000001. It’s just a fraction of a cent, but for an order book, this is unacceptable. To solve this problem, all values are stored as `int64` with a price scale. This means that each number is multiplied by `price_scale` (1000000) before being entered into the system. This way, we completely eliminate the use of `double's`, but we can still work with fractional values.
