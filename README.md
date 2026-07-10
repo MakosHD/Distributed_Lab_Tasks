@@ -10,7 +10,6 @@ The language of the solutions is C++ and were created on Arch Linux with VS Code
 |❌ 5. Backpack with Bitcoin transactions||Not completed due to a lack of the necessary knowledge|
 |❌ 6. The Longest UTXO chain||Not completed due to a lack of the necessary knowledge|
 |❌ 7. Pinatas|| Not completed due to a lack of brainpower|
-||||
 |✅ 8. [Student’s capital](/Task8_Students_capital/README.md)|40m||
 |❓ 9. Long Arithmetic||Time's up|
 
