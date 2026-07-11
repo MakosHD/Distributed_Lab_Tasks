@@ -1,4 +1,4 @@
-# Hitler crawler version 1
+# 4. Hitler crawler version 1 (4h43m)
 
 ![alt text](/Task4_Hitler_crawler_version1/pics/image_1.png)
 
