@@ -7,7 +7,7 @@
 int main(int argc, char** argv) {
 	//std::cout << argc << std::endl;
 	if (argc != 3) {
-		std::cerr << "usage: ./task3 path_to_first_day path_to_second_day";
+		std::cerr << "usage: ./task3 path_to_first_day path_to_second_day" << std::endl;
 		return -1;
 	}
 	std::unordered_map<std::string, std::unordered_set<std::string>> day_1;

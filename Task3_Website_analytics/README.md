@@ -15,6 +15,10 @@ The program is very easy to use. All you need to do is pass two arguments: the p
 ![alt text](/Task3_Website_analytics/pics/image_1.png)
 
 This repository includes two sample files to make it easier to test the program's functionality.
+
+If necessary, you can display a brief tip on how to use the program.
+
+![alt text](/Task3_Website_analytics/pics/image_2.png)
 ## How to install
 
 **Tested only on Linux!**
@@ -64,3 +68,7 @@ If no errors appeared, then congratulations! You've successfully compiled the pr
 
 
 ## Why my solution is efficient?
+- Each file is read only once  
+The first file is read and written to an unordered_map. All orders are stored in an unordered_set; that is, even if a user views a particular product twice in one day, the unordered_set retains only one entry. On the second day, the file is read, and each user is checked against the unordered_map. If the checks pass, the user is considered eligible. 
+- The second file is not saved to memory  
+When a file is being read, all checks are performed simultaneously
