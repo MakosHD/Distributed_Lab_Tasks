@@ -52,7 +52,7 @@ sudo apt-get upgrade
 Next, you need to install all the dependencies required for a successful build
 
 ```
-sudo apt-get install git cmake build-essential curl
+sudo apt-get install git cmake build-essential libcurl4-openssl-dev libssl-dev
 ```
 
 After successful installation, you need to clone this repository
@@ -82,6 +82,19 @@ If no errors appeared, then congratulations! You've successfully compiled the pr
 ./task4
 ```
 
-
-
 ## Why my solution is efficient?
+
+- Each page is processed only once  
+The `unsorted_set visited` is used to keep track of which pages have been scanned. This helps avoid situations where two pages link to each other, which could create an infinite loop. 
+
+- Using of threads  
+Using threads has significantly sped up the overall search process. Usually, when we make requests, we spend most of the time simply waiting for a response, but with threads, we send multiple requests simultaneously, which increases the overall speed. You can also easily adjust the number of threads as needed, but the main thing is to avoid any restrictions imposed by Wikipedia.
+
+- Interaction Between Threads  
+A quick-stop mechanism was developed, that is, if “hitler” is found, all threads will be notified and will terminate as quickly as possible.
+
+- Working with pointers
+Instead of working with s_page structures, the entire search algorithm works with pointers, which speeds up the process and reduces the load on memory
+
+- A pinch of randomness
+The program doesn't scan every link in sequence; that would take a very long time because Hitler is usually found at levels 3–5 rather than 0–3. If the scanning were done sequentially, it would take a long time. Randomization helps scan both the initial pages for adding branches and deep pages, which speeds up the search.
