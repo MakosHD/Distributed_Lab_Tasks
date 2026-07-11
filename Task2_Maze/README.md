@@ -1,4 +1,4 @@
-# 1. Maze(6h20m)
+# 2. Maze(6h20m)
 
 ![Image of ready maze](/Task2_Maze/pics/image_1.png)
 

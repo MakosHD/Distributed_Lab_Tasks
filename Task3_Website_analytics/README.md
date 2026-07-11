@@ -1,4 +1,4 @@
-# 1. Maze(30m)
+# 3. Website analytics(30m)
 
 
 ## Description
@@ -11,6 +11,7 @@ This program uses the `csv` library to work with CSV files. First, the program r
 
 ## How to use
 The program is very easy to use. All you need to do is pass two arguments: the paths to the CSV files
+
 ![alt text](/Task3_Website_analytics/pics/image_1.png)
 
 This repository includes two sample files to make it easier to test the program's functionality.
