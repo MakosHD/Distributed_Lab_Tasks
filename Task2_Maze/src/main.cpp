@@ -295,6 +295,13 @@ int main(int argc, char* argv[]) {
 			DRAW_PATH = true;
 		} else if (arg == "--help") {
 			std::cout << std::string("usage: ") + argv[0] + " --width={3} --height={3} --path --help" << std::endl;
+			std::cout << "\x1b[44m" << "E" << "\x1b[0m" << " - Entrance\n";
+			std::cout << "\x1b[42m" << "X" << "\x1b[0m" << " - Exit\n";
+			std::cout << "\x1b[40m" << " " << "\x1b[0m" << " - Road\n";
+			std::cout << "\x1b[47m" << "#" << "\x1b[0m" << " - Wall\n";
+			std::cout << "\x1b[41m" << "T" << "\x1b[0m" << " - Trap\n";
+			std::cout << "\x1b[43m" << "G" << "\x1b[0m" << " - Treasure(GOLD! GOLD! GOLD! GOLD!)\n";
+			std::cout << "\x1b[44m" << "E TG" << "\x1b[0m" << " - Part of solution" << std::endl;
 			return 0;
 		} else {
 			std::cerr << "Unknown argument: " << arg << std::endl;
